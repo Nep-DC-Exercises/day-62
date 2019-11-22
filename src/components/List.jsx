@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Post from "./Post"
 import { getTopStoriesIds } from "../utils/";
 
+
 class List extends Component {
     state = {
         topIds: []
