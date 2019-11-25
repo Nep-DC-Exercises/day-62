@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getAStory } from "../utils";
+import { getAnItem } from "../utils";
 import Moment from "react-moment";
 // {
 //     "by" : "dhouston",
@@ -20,7 +20,7 @@ class Post extends Component {
 
     async componentDidMount() {
         const idFromParent = this.props.id;
-        const response = await getAStory(idFromParent);
+        const response = await getAnItem(idFromParent);
         const postData = response.data;
         this.setState({ postData });
     }
@@ -42,6 +42,7 @@ class Post extends Component {
                 <p>
                     {postData.score} points by {postData.by}
                 </p>
+                <p><a href={'/comment/' + postData.id}>See more comments</a></p>
             </div>
         );
     }
